@@ -1,3 +1,4 @@
+import { LoginPage } from './../pages/login/login';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -20,7 +21,7 @@ export class MyApp {
       if (window.localStorage.getItem('user')) {
         this.rootPage = RoomsPage;
       } else {
-        this.rootPage = 'LoginPage';
+        this.rootPage = LoginPage;
       }
     });
   }

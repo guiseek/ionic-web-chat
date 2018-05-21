@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage } from 'ionic-angular';
+import { FbProvider } from './../../providers/fb/fb';
+import { Observable } from 'rxjs/Observable';
 
 /**
  * Generated class for the HtmlPage page.
@@ -14,12 +16,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'html.html',
 })
 export class HtmlPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  messages: Observable<any[]>;
+  user: any;
+  constructor(public fbProvider: FbProvider) {
+    this.user = window.localStorage.getItem('user');
   }
-
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HtmlPage');
+    this.messages = this.fbProvider.getList('html').valueChanges();
   }
-
+  send(message) {
+    this.fbProvider.addItem('html', message);
+  }
 }

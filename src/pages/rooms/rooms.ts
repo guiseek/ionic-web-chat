@@ -1,3 +1,6 @@
+import { JavascriptPage } from './../javascript/javascript';
+import { CssPage } from './../css/css';
+import { HtmlPage } from './../html/html';
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 
@@ -15,9 +18,9 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class RoomsPage {
   user: any;
-  htmlRoot = 'HtmlPage'
-  cssRoot = 'CssPage'
-  javascriptRoot = 'JavascriptPage'
+  htmlRoot = HtmlPage
+  cssRoot = CssPage
+  javascriptRoot = JavascriptPage
   constructor(public navCtrl: NavController) {}
   ionViewDidLoad() {
     this.user = window.localStorage.getItem('user');

@@ -1,5 +1,6 @@
+import { ComponentsModule } from './../../components/components.module';
 import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
+import { IonicPageModule, IonicModule } from 'ionic-angular';
 import { JavascriptPage } from './javascript';
 
 @NgModule({
@@ -7,6 +8,8 @@ import { JavascriptPage } from './javascript';
     JavascriptPage,
   ],
   imports: [
+    IonicModule,
+    ComponentsModule,
     IonicPageModule.forChild(JavascriptPage),
   ],
 })

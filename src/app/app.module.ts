@@ -1,5 +1,4 @@
-import { ComponentsModule } from './../components/components.module';
-import { RoomsPageModule } from './../pages/rooms/rooms.module';
+import { LoginPageModule } from './../pages/login/login.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -11,8 +10,9 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { MyApp } from './app.component';
+import { ComponentsModule } from './../components/components.module';
+import { RoomsPageModule } from './../pages/rooms/rooms.module';
 import { HomePage } from '../pages/home/home';
-import { FbProvider } from '../providers/fb/fb';
 
 @NgModule({
   declarations: [
@@ -23,6 +23,7 @@ import { FbProvider } from '../providers/fb/fb';
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    LoginPageModule,
     RoomsPageModule,
     ComponentsModule,
     IonicModule.forRoot(MyApp)
@@ -36,7 +37,6 @@ import { FbProvider } from '../providers/fb/fb';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    FbProvider
   ]
 })
 export class AppModule {}

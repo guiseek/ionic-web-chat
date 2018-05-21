@@ -1,6 +1,7 @@
+import { FbProvider } from './../../providers/fb/fb';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Observable } from 'rxjs/Observable';
 /**
  * Generated class for the JavascriptPage page.
  *
@@ -14,12 +15,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'javascript.html',
 })
 export class JavascriptPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  messages: Observable<any>;
+  user: any;
+  constructor(public fbProvider: FbProvider) {
+    this.user = window.localStorage.getItem('user');
   }
-
   ionViewDidLoad() {
-    console.log('ionViewDidLoad JavascriptPage');
+    this.messages = this.fbProvider.getList('javascript').valueChanges();
   }
-
+  send(message) {
+    this.fbProvider.addItem('javascript', message);
+  }
 }
