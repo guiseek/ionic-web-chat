@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon name="contact"></ion-icon>
+      {{user}}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button round icon-only color="danger" (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-tabs tabsPlacement="top">
+  <ion-tab [root]="htmlRoot" tabTitle="Html" tabIcon="information-circle"></ion-tab>
+  <ion-tab [root]="cssRoot" tabTitle="Css" tabIcon="information-circle"></ion-tab>
+  <ion-tab [root]="javascriptRoot" tabTitle="Javascript" tabIcon="information-circle"></ion-tab>
+</ion-tabs>

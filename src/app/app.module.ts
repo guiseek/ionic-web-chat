@@ -1,3 +1,4 @@
+import { RoomsPageModule } from './../pages/rooms/rooms.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -14,12 +15,13 @@ import { HomePage } from '../pages/home/home';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    RoomsPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

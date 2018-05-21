@@ -1,3 +1,4 @@
+import { RoomsPage } from './../rooms/rooms';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -21,7 +22,7 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) { }
   enter() {
     window.localStorage.setItem('user',this.user.get('nickname').value);
-    // this.navCtrl.setRoot(TabsPage);
+    this.navCtrl.setRoot(RoomsPage);
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
